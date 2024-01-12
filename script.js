@@ -15,7 +15,7 @@ window.addEventListener("keydown",(e)=>{
 async function getWeather(city){
     const response=await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=302a107bf38ea70569a9e5e52f716f26&units=metric`);
     const data=await response.json();
-
+    
     document.querySelector(".temp").innerHTML=Math.round(data.main.temp)+"°C";
     document.querySelector(".city").innerHTML=data.name;
     document.querySelector(".humidity").innerHTML=data.main.humidity+"%";
